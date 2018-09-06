@@ -39,7 +39,7 @@ add_filter("plugin_action_links_$plugin", 'greyforest_woocommercepaymentgatewaym
 add_action('admin_enqueue_scripts', 'woocommerce_gateway_monero_custom_script');
 function woocommerce_gateway_monero_custom_script($hook) {
 	if( $hook != 'woocommerce_page_wc-settings' ) { return; }
-	wp_enqueue_script( 'woocommerce_gateway_monero_gateway', plugin_dir_url(__FILE__) .'js/custom.js' );
+	wp_enqueue_script( 'woocommerce_gateway_monero_gateway', plugin_dir_url(__FILE__) .'js/admin-monero-gateway-settings.js' );
 }
 
 
