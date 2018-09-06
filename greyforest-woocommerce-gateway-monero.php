@@ -30,12 +30,13 @@ function greyforest_woocommercepaymentgatewaymonero_settings_link($links) {
   array_unshift($links, $settings_link); 
   return $links; 
 }
- 
 $plugin = plugin_basename(__FILE__); 
 add_filter("plugin_action_links_$plugin", 'greyforest_woocommercepaymentgatewaymonero_settings_link' );
 
 
-
+///////////////////////////////////////////////////////////////////////////////
+/// ENQUEUE HELPER JS SCRIPT ONLY ON WC SETTINGS PAGES                      ///
+///////////////////////////////////////////////////////////////////////////////
 add_action('admin_enqueue_scripts', 'woocommerce_gateway_monero_custom_script');
 function woocommerce_gateway_monero_custom_script($hook) {
 	if( $hook != 'woocommerce_page_wc-settings' ) { return; }
@@ -148,7 +149,7 @@ class WC_Gateway_monero extends WC_Payment_Gateway {
 	
 
 ///////////////////////////////////////////////////////////////////////////////
-/// ORDER RECEIVED PAGE OUTPUT                                              ///
+/// ORDER RECEIVED / THANK YOU PAGE OUTPUT                                  ///
 ///////////////////////////////////////////////////////////////////////////////
 public function thankyou_page( $order_id ) {
 
@@ -199,6 +200,10 @@ $('#rates').load('<?php echo plugin_dir_url( __FILE__ ); ?>rates.php?payment_typ
 <?php
 echo ob_get_clean();
 }
+///////////////////////////////////////////////////////////////////////////////
+/// ORDER RECEIVED / THANK YOU PAGE OUTPUT                                  ///
+///////////////////////////////////////////////////////////////////////////////
+
 
     /**
      * Add content to the WC emails.
@@ -252,38 +257,6 @@ echo ob_get_clean();
 	}	
 
 add_filter('woocommerce_payment_gateways', 'woocommerce_add_gateway_monero' ); 
-
-
-
-
-
-// BACS payement gateway description: Append custom select field
-// add_filter( 'woocommerce_gateway_description', 'gateway_bacs_custom_fields', 20, 2 );
-// function gateway_bacs_custom_fields( $description, $method_id ){
-//     //
-//     if( $method_id == 'monero' ){
-//         ob_start(); // Start buffering
-// 
-//         echo '<div  class="monero-fields" style="padding:10px 0;">';
-// 
-//         woocommerce_form_field( 'field_slug', array(
-//             'type'          => 'select',
-//             'label'         => __("", "woocommerce"),
-//             'class'         => array('form-row-wide'),
-//             'required'      => false,
-//             'options'       => array(
-//                 ''          => __("Select something", "woocommerce"),
-//                 'choice-1'  => __("Stellar", "woocommerce"),
-//                 'choice-2'  => __("Ripple", "woocommerce"),
-//             ),
-//         ), "");
-// 
-//         echo '<div>';
-// 
-//         $description .= ob_get_clean(); // Append buffered content
-//     }
-//     return $description;
-// }
 
 
 
