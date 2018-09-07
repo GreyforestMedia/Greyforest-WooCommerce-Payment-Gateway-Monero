@@ -22,3 +22,6 @@ To setup, enable the Gateway through WooCommerce's settings panel, then enter yo
 Discount/fees are updated dynamically on the checkout page and added as a line item to the order for record keeping.
 
 ![CHECKOUT](/media/SCREENSHOT-checkout.jpg)
+
+## DONATE
+XMR: 82hwVhCKzat9NW9UCMsn3fAeAEAccsMC3FRpHu9jAeNvWYKhTsJr622a2s7vZyt3XfCTkG69SeZuWMpuwAcLM3qgCoXfGRa
