@@ -3,7 +3,7 @@ Donate link: https://www.paypal.me/greyforestmedia
 Tags: woocommerce, payment gateway, crypto currency, monero
 Requires at least: 4.0
 Tested up to: 4.9.8
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: None
 License URI: None
 
