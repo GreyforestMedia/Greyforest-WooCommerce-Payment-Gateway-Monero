@@ -35,6 +35,9 @@ To change payment icon, overwrite "GATEWAY-monero.png" in the plugin folder.
 
 == Changelog ==
 
+= 2.0.1 =
+* Fixed QR code text string getting null value
+
 = 2.0.0 =
 * Rebuilt fee/discount option to dynamically calculate updated price as well as display/include a line item note in the emails and Checkout page
 * Removed "message" option as it was throwing errors for the QR code address generation (and was unnecessary with order number hardcode in price)
