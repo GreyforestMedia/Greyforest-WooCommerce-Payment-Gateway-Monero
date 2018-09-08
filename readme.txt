@@ -37,6 +37,7 @@ To change payment icon, overwrite "GATEWAY-monero.png" in the plugin folder.
 
 = 2.0.1 =
 * Fixed QR code text string getting null value
+* Updated reduce_order_stock function to wc_reduce_stock_levels
 
 = 2.0.0 =
 * Rebuilt fee/discount option to dynamically calculate updated price as well as display/include a line item note in the emails and Checkout page
