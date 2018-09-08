@@ -3,7 +3,7 @@
 Plugin Name: Greyforest ::: WooCommerce Payment Gateway - Monero
 Plugin URI: https://www.greyforest.media/plugins
 Description: Adds Monero (XMR) option to payment gateways.
-Version: 2.0.1
+Version: 2.0.2
 Author: Greyforest Media
 Author URI: https://www.greyforest.media
 WC requires at least: 3.0.0
@@ -234,7 +234,7 @@ echo ob_get_clean();
 		$order->update_status( 'on-hold', __( 'Awaiting Monero payment. ', 'woocommerce' ) );
 
 		// Reduce stock levels
-		$order->reduce_order_stock();
+		wc_reduce_stock_levels( $order->get_id() );
 
 		// Remove cart
 		WC()->cart->empty_cart();
