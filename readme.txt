@@ -1,9 +1,9 @@
 === Greyforest ::: WooCommerce Payment Gateway - Monero ===
 Donate link: https://www.paypal.me/greyforestmedia
 Tags: woocommerce, payment gateway, crypto currency, monero
-Requires at least: 4.0
-Tested up to: 4.9.8
-Stable tag: 2.0.1
+Requires at least: 5.0
+Tested up to: 5.5
+Stable tag: 2.1.1
 License: None
 License URI: None
 
@@ -15,14 +15,14 @@ This plugin adds a minimal Monero payment gateway to a WooCommerce shop.
 
 When customers check "Monero" on the Checkout page, they are redirected to the "Order Received" page, 
 where they are presented a dynamically-generated QR code with the store's chosen wallet address, and a price in Monero
-converted from current rates pulled from Coin Market Cap. The rates and QR code regenerate every minute, ensuring the price
+converted from current rates pulled from CoinGecko's API. The rates and QR code regenerate every minute, ensuring the price
 is accurate.
 
-To setup, enable the Gateway through WooCommerce's settings panel, then enter your Monero wallet address, choose a fee/discount option if desired, 
+To setup, enable the Gateway through WooCommerce's settings panel, enter your Monero wallet address, choose a fee/discount option if desired, 
 and the percentage you would like to add/subtract to each payment as a fee/discount (enter 0 if none).
 
 FUTURE UPGRADES:
-Wallet address array to provide multiple possible addresses for randomization potential & enhanced privacy.
+Wallet address array to provide multiple possible addresses for randomization & potential enhanced privacy.
 
 
 == Installation ==
@@ -30,10 +30,17 @@ Wallet address array to provide multiple possible addresses for randomization po
 1. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 
-To change payment icon, overwrite "GATEWAY-monero.png" in the plugin folder.
+To change payment icon, overwrite "GATEWAY-monero.png" in the plugin folder. 
 
 
 == Changelog ==
+
+= 2.1.1 =
+* Updated price API to CoinGecko to continue free functionality
+* Cleaned up jQuery code
+* CSS tweaks
+* Updated to not require separate rates.php file
+* SVG icons added to folder for choice
 
 = 2.0.1 =
 * Fixed QR code text string getting null value
